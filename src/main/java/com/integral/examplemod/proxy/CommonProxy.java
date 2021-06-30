@@ -13,41 +13,41 @@ import net.minecraft.world.World;
 
 public class CommonProxy implements IGuiHandler {
 
-	public CommonProxy() {
-		// NO-OP
-	}
+    public CommonProxy() {
+        // NO-OP
+    }
 
-	@Override
-	public Object getServerGuiElement(final int ID, final EntityPlayer player, final World world, final int X, final int Y, final int Z) {
-		final TileEntity te = world.getTileEntity(X, Y, Z);
+    @Override
+    public Object getServerGuiElement(final int ID, final EntityPlayer player, final World world, final int X, final int Y, final int Z) {
+        final TileEntity te = world.getTileEntity(X, Y, Z);
 
-		if (te == null)
-			return null;
+        if (te == null)
+            return null;
 
-		return null;
+        return null;
 
-	}
+    }
 
-	@Override
-	public Object getClientGuiElement(final int ID, final EntityPlayer player, final World world, final int X,
-			final int Y, final int Z) {
-		return null;
-	}
+    @Override
+    public Object getClientGuiElement(final int ID, final EntityPlayer player, final World world, final int X,
+            final int Y, final int Z) {
+        return null;
+    }
 
-	public void registerRenderers() {
-		// NO-OP
-	}
+    public void registerRenderers() {
+        // NO-OP
+    }
 
-	public EntityPlayer getPlayer(UUID playerID) {
-		if (MinecraftServer.getServer() != null) {
-			for (Object object : MinecraftServer.getServer().getConfigurationManager().playerEntityList) {
-				EntityPlayerMP player = (EntityPlayerMP) object;
-				if (player.getUniqueID().equals(playerID))
-					return player;
-			}
-		}
+    public EntityPlayer getPlayer(UUID playerID) {
+        if (MinecraftServer.getServer() != null) {
+            for (Object object : MinecraftServer.getServer().getConfigurationManager().playerEntityList) {
+                EntityPlayerMP player = (EntityPlayerMP) object;
+                if (player.getUniqueID().equals(playerID))
+                    return player;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
 }

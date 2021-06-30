@@ -15,14 +15,14 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
 public class GenericEventHandler {
 
-	@SubscribeEvent
-	public void onEntityJoinWorld(EntityJoinWorldEvent event) {
-		Entity entity = event.entity;
+    @SubscribeEvent
+    public void onEntityJoinWorld(EntityJoinWorldEvent event) {
+        Entity entity = event.entity;
 
-		if (!entity.worldObj.isRemote && entity instanceof EntityPlayerMP) {
-			System.out.println("Entity joined world: " + entity);
-			ExampleMod.packetHandler.sendTo(new ExamplePacket(), (EntityPlayerMP)entity);
-		}
-	}
+        if (!entity.worldObj.isRemote && entity instanceof EntityPlayerMP) {
+            System.out.println("Entity joined world: " + entity);
+            ExampleMod.packetHandler.sendTo(new ExamplePacket(), (EntityPlayerMP)entity);
+        }
+    }
 
 }
