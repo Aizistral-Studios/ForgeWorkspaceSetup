@@ -21,7 +21,7 @@ Basic setup for Forge-based mod development workspace. Essentially serves as enn
 - Provides an example of registering custom `SimpleNetworkWrapper`, as well as an example packet sent from server to every player upon logging in. Shows a chat message to that player upon being received, just as demonstration that packet have performed its journey successfully;
 - Has one method that interacts with Baubles - `BaublesHelper#hasEquipped`. Just to demonstrate that our example of local modfile dependency, which is Baubles modfile in this case, actually works;
 - Mod version in the code (`ExampleMod.VERSION`) is defined as token string, which is replaced by actual project version when building;
-- Has `CommonProxy`/`ClientProxy` thing, which also serve as an example of `IGuiHandler` implementation;
+- Has `CommonProxy`/`ClientProxy` thing, which also serves as an example of `IGuiHandler` implementation;
 - Contains uncomplicated event handler with a single receiver for `EntityJoinWorldEvent`;
 - Illustrates how to create a config file using Forge's `Configuration`.
 
