@@ -21,36 +21,36 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy {
 
-	public ClientProxy() {
-		super();
-	}
+    public ClientProxy() {
+        super();
+    }
 
-	@Override
-	public Object getClientGuiElement(final int ID, final EntityPlayer player, final World world, final int X, final int Y, final int Z) {
-		final TileEntity te = world.getTileEntity(X, Y, Z);
+    @Override
+    public Object getClientGuiElement(final int ID, final EntityPlayer player, final World world, final int X, final int Y, final int Z) {
+        final TileEntity te = world.getTileEntity(X, Y, Z);
 
-		if (te == null)
-			return null;
+        if (te == null)
+            return null;
 
-		return null;
-	}
+        return null;
+    }
 
-	@Override
-	public void registerRenderers() {
-		// NO-OP
-	}
+    @Override
+    public void registerRenderers() {
+        // NO-OP
+    }
 
-	@Override
-	public EntityPlayer getPlayer(UUID playerID) {
-		if (Minecraft.getMinecraft().theWorld != null) {
-			for (Object object : Minecraft.getMinecraft().theWorld.playerEntities) {
-				EntityPlayer player = (EntityPlayer) object;
-				if (player.getUniqueID().equals(playerID))
-					return player;
-			}
-		}
+    @Override
+    public EntityPlayer getPlayer(UUID playerID) {
+        if (Minecraft.getMinecraft().theWorld != null) {
+            for (Object object : Minecraft.getMinecraft().theWorld.playerEntities) {
+                EntityPlayer player = (EntityPlayer) object;
+                if (player.getUniqueID().equals(playerID))
+                    return player;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
 }

@@ -28,6 +28,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import io.github.crucible.omniconfig.api.OmniconfigAPI;
 
 @Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION, name = ExampleMod.NAME)
 public class ExampleMod {
@@ -55,7 +56,7 @@ public class ExampleMod {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ExampleConfig.load(event);
+        OmniconfigAPI.registerAnnotationConfig(ExampleConfig.class);
 
         packetHandler = NetworkRegistry.INSTANCE.newSimpleChannel("ExampleModChannel");
         packetHandler.registerMessage(ExamplePacket.Handler.class, ExamplePacket.class, 1, Side.CLIENT);
@@ -66,7 +67,6 @@ public class ExampleMod {
 
         NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
     }
-
 
     public static CreativeTabs tabExampleMod = new CreativeTabs("tabExampleMod") {
         @Override
