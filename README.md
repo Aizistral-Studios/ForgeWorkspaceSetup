@@ -5,7 +5,7 @@ Basic setup for Forge-based mod development workspace. Essentially serves as enn
 ## Fixes:
 
 - Custom ForgeGradle fork is used ([this one](https://github.com/juanmuscaria/ForgeGradle)). Ensures compatibility with Gradle 5.+, fixes some repository references and does a couple obscure manipulations with `.classpath` file for Eclipse projects to ensure they won't break again;
-- Custom maven repository is used for locating all basic dependencies ([this one](https://github.com/juanmuscaria/maven/raw/master)). Since Forge guys keep making breaking changes on their side without caring about old Minecraft versions, this is a much more reliable option than trying to chase their ever-shifting repos;
+- Custom maven repository is used for locating all basic dependencies ([this one](https://github.com/juanmuscaria/maven)). Since Forge guys keep making breaking changes on their side without caring about old Minecraft versions, this is a much more reliable option than trying to chase their ever-shifting repos;
 - Buildscript now enforces Java 8 compliance and UTF-8 encoding for all files.
 
 ## Building Features:
