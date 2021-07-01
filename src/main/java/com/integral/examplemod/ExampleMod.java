@@ -27,12 +27,13 @@ import com.integral.examplemod.handlers.ExampleConfig;
 import com.integral.examplemod.handlers.GenericEventHandler;
 import com.integral.examplemod.network.packets.ExamplePacket;
 import com.integral.examplemod.proxy.CommonProxy;
+import io.github.crucible.omniconfig.api.OmniconfigAPI;
 
 @Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION, name = ExampleMod.NAME)
 public class ExampleMod {
     public static final String MODID = "examplemod";
     public static final String NAME = "The Example Mod";
-    public static final String VERSION = "1.0.0";
+    public static final String VERSION = "@VERSION@";
 
     public static SimpleNetworkWrapper packetHandler;
 
@@ -54,7 +55,7 @@ public class ExampleMod {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ExampleConfig.load(event);
+        OmniconfigAPI.registerAnnotationConfig(ExampleConfig.class);
 
         packetHandler = NetworkRegistry.INSTANCE.newSimpleChannel("ExampleModChannel");
         packetHandler.registerMessage(ExamplePacket.Handler.class, ExamplePacket.class, 1, Side.CLIENT);
