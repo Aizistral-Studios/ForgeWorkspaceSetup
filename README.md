@@ -13,7 +13,7 @@ Basic setup for Forge-based mod development workspace. Essentially serves as enn
 - Gradle wrapper 5.6.4 is used by default;
 - Buildscript contains tasks for generating `dev` and `sources` artifacts for your mod, as well as ensures they will be generated alongside main jar when executing `gradlew build`;
 - All data in `mcmod.info` file is filled when actually building a mod. This illustrates both how to inflate text files upon building and how to use `gradle.properties` file for declaring custom properties used by `build.gradle`;
-- Illustrates how to add another mod to project dependencies, in a form of local file.
+- Illustration of how to add another mod to project dependencies, in a form of local file.
 
 ## Ennobled Example Mod:
 
