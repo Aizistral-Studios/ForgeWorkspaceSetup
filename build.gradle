@@ -1,14 +1,25 @@
 buildscript {
     repositories {
+		gradlePluginPortal()
         mavenCentral()
         jcenter()
 		maven {
 			name = "Forge"
 			url = 'https://files.minecraftforge.net/maven'
 		}
+		maven {
+            name = 'spongepowered-repo'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
+        maven {
+            name = "github"
+            url = "https://github.com/juanmuscaria/maven/raw/master"
+        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+		classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
+		classpath 'com.integral.grimoire:GrimoireShenanigans:[1.2.6,)'
     }
 }
 
@@ -18,9 +29,11 @@ repositories {
 	}
 }
 
-apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'grimoire-shenanigans'
 
 version = mod_version
 group = mod_group
@@ -29,27 +42,20 @@ archivesBaseName = mod_archives_name
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
+
+sourceSets {
+	main {
+		ext.refMap = mixinRefmapName
+	}
+}
+
 minecraft {
-    mappings channel: 'snapshot', version: '20171003-1.12'
+	version = "1.12.2-14.23.5.2847"
+    mappings = "snapshot_20171003"
+	runDir = "eclipse"
     
+	replace '@VERSION@', project.version
 	// makeObfSourceJar = false
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            property 'forge.logging.console.level', 'debug'
-        }
-
-        server {
-			workingDirectory project.file('run')
-		
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            property 'forge.logging.console.level', 'debug'
-        }
-    }
 }
 
 processResources {
@@ -72,11 +78,8 @@ processResources {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:' + mc_version + '-' + forge_version
 	compile name: 'Baubles-1.12-1.5.2-dev'
 }
-
-jar.finalizedBy('reobfJar') 
 
 task devJar(type: Jar) {
 	classifier = 'dev'
