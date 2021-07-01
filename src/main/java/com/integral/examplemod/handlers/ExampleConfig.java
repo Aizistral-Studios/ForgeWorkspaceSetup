@@ -2,8 +2,8 @@ package com.integral.examplemod.handlers;
 
 import java.io.File;
 
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ExampleConfig {
     private static final String GENERIC_CATEGORY = "Generic Config";

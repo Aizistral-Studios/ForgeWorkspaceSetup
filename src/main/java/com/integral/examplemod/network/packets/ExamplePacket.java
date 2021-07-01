@@ -1,14 +1,14 @@
 package com.integral.examplemod.network.packets;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.common.network.simpleimpl.IMessage;
-import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
-import cpw.mods.fml.common.network.simpleimpl.MessageContext;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ExamplePacket implements IMessage {
 
@@ -32,7 +32,10 @@ public class ExamplePacket implements IMessage {
         @SideOnly(Side.CLIENT)
         public IMessage onMessage(ExamplePacket message, MessageContext ctx) {
             EntityPlayer player = FMLClientHandler.instance().getClientPlayerEntity();
-            player.addChatMessage(new ChatComponentText("Received example packet from server!"));
+
+            if (player != null) {
+                player.sendStatusMessage(new TextComponentString("Received example packet from server!"), false);
+            }
 
             return null;
         }

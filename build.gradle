@@ -1,15 +1,15 @@
 buildscript {
-	repositories {
-		mavenCentral()
-		jcenter()
-        maven {
-            name = "github"
-            url = "https://github.com/juanmuscaria/maven/raw/master"
-        }
-	}
-	dependencies {
-		classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-1.4.0-SNAPSHOT'
-	}
+    repositories {
+        mavenCentral()
+        jcenter()
+		maven {
+			name = "Forge"
+			url = 'https://files.minecraftforge.net/maven'
+		}
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+    }
 }
 
 repositories {
@@ -18,25 +18,38 @@ repositories {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'forge'
-
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
 
 version = mod_version
 group = mod_group
 archivesBaseName = mod_archives_name
 
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
 minecraft {
-	version = "1.7.10-10.13.4.1614-1.7.10"
-	runDir = "eclipse"
-	replace "@VERSION@", project.version
-}
+    mappings channel: 'snapshot', version: '20171003-1.12'
+    
+	// makeObfSourceJar = false
+    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
+    runs {
+        client {
+            workingDirectory project.file('run')
 
-dependencies {
-	compile name: 'Baubles-1.7.10-1.0.1.10-dev'
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+        }
+
+        server {
+			workingDirectory project.file('run')
+		
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+        }
+    }
 }
 
 processResources {
@@ -57,6 +70,13 @@ processResources {
         exclude 'mcmod.info'
     }
 }
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:' + mc_version + '-' + forge_version
+	compile name: 'Baubles-1.12-1.5.2-dev'
+}
+
+jar.finalizedBy('reobfJar') 
 
 task devJar(type: Jar) {
 	classifier = 'dev'
