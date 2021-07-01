@@ -23,7 +23,8 @@ Basic setup for Forge-based mod development workspace. Essentially serves as enn
 - Mod version in the code (`ExampleMod.VERSION`) is defined as token string, which is replaced by actual project version when building;
 - Has `CommonProxy`/`ClientProxy` thing, which also serves as an example of `IGuiHandler` implementation;
 - Contains uncomplicated event handler with a single receiver for `EntityJoinWorldEvent`;
-- Illustrates how to create a config file using Forge's `Configuration`.
+- Illustrates how to create a config file using Forge's `Configuration`;
+- Creates custom creative tab.
 
 
 ## Short Setup Guide:
