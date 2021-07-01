@@ -18,8 +18,6 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-		classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
-		classpath 'com.integral.grimoire:GrimoireShenanigans:[1.2.6,)'
     }
 }
 
@@ -32,8 +30,6 @@ repositories {
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'grimoire-shenanigans'
 
 version = mod_version
 group = mod_group
@@ -41,13 +37,6 @@ archivesBaseName = mod_archives_name
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
-
-
-sourceSets {
-	main {
-		ext.refMap = mixinRefmapName
-	}
-}
 
 minecraft {
 	version = "1.12.2-14.23.5.2847"
