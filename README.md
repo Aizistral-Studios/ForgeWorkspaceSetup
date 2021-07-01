@@ -1,6 +1,6 @@
 # Forge Workspace Setup: Grimmix 1.7.10
 
-Basic setup for Forge-based mod development workspace, but for mod that depends on Grimoire. Besides all advatages of standalone 1.7.10 setup, which you can familiarize yourself with [here](https://github.com/CrucibleMC/ForgeWorkspaceSetup#readme), this setup includes:
+Basic setup for Forge-based mod development workspace, but for mod that depends on Grimoire. Besides all advantages of standalone 1.7.10 setup, which you can familiarize yourself with [here](https://github.com/CrucibleMC/ForgeWorkspaceSetup#readme), this setup includes:
 
 ## Building Features:
 
