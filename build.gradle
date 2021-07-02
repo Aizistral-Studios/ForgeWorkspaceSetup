@@ -9,7 +9,7 @@ buildscript {
 	}
 	dependencies {
 		classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-1.4.0-SNAPSHOT'
-		classpath 'com.integral.grimoire:GrimoireShenanigans:[1.2.5,)'
+		classpath 'com.integral.grimoire:GrimoireShenanigans:[1.2.6,)'
 	}
 }
 
