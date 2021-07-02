@@ -1,4 +1,4 @@
-package com.integral.examplemod.mixins.client;
+package com.integral.examplemod.mixins.core.client;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

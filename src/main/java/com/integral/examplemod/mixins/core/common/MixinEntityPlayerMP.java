@@ -1,4 +1,4 @@
-package com.integral.examplemod.mixins.common;
+package com.integral.examplemod.mixins.core.common;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,7 +22,7 @@ public class MixinEntityPlayerMP {
         EntityPlayerMP player = (EntityPlayerMP)(Object)this;
         ItemStack stack = player.getHeldItemMainhand();
 
-        if (stack != null && stack.getItem() != null) {
+        if (stack != null && stack.getItem() != null && !stack.isEmpty()) {
             player.sendStatusMessage(new TextComponentString("I see that you swinged your arm..."), false);
             player.sendStatusMessage(new TextComponentString("Your held item class is: " + stack.getItem().getClass()), false);
         }
