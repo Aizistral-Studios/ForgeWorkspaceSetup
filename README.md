@@ -10,7 +10,8 @@ Basic setup for Forge-based mod development workspace, but for mod that depends 
 ## Extended Example Mod:
 
 - Includes simple implementation of grimmix controller;
-- Uses `IConfigBuildingEvent` to generate its mixin configuration at runtime. Alongside demonstrates how wildcards can be used when specifying mixin classes, and how `@MIXIN_REFMAP@` token can be used, which is replaced with actual refmap name as specified in `gradle.properties` when building modfile.
+- Uses `IConfigBuildingEvent` to generate its mixin configuration at runtime. Alongside demonstrates how wildcards can be used when specifying mixin classes, and how `@MIXIN_REFMAP@` token can be used, which is replaced with actual refmap name as specified in `gradle.properties` when building modfile;
+- Contains a couple examples of core-targeting mixins;
 - Uses `@AnnotationConfig` to create mod's config file.
 
 ## Short Setup Guide:
