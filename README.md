@@ -6,7 +6,7 @@ Basic setup for Forge-based mod development workspace, but for mod that depends 
 
 - **MixinGradle** plugin is added to buildscript. Mostly just takes care of handling refmap generation and embedding. Check out [its repository](https://github.com/SpongePowered/MixinGradle) to know more;
 - **Grimoire Shenanigans** plugin is added to buildscript. Does some amount of heavy lifting for ya, like specifying proper compile-time and runtime dependencies. For more details - [pay that plugin's reporitory a personal visit](https://github.com/CrucibleMC/Grimoire-Shenanigans#readme);
-- Custom refmap name and Grimoire version range specified in `gradle.properties`.
+- Custom refmap name specified in `gradle.properties`.
 
 ## Extended Example Mod:
 
