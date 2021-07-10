@@ -5,7 +5,7 @@ Basic setup for Forge-based mod development workspace, but for mod that depends 
 ## Building Features:
 
 - **Grimoire Shenanigans** plugin is added to buildscript. Does a lot of heavy lifting for ya, like specifying proper compile-time and runtime dependencies, making sure Mixin annotation processor will do its job when compiling, tweaking refmap generation, and some more. For more details - [pay that plugin's reporitory a personal visit](https://github.com/CrucibleMC/Grimoire-Shenanigans#readme);
-- Custom refmap name and Grimoire version range specified in `gradle.properties`.
+- Custom refmap name specified in `gradle.properties`.
 
 ## Extended Example Mod:
 
