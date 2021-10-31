@@ -14,8 +14,6 @@ eclipse/*
 .project
 .classpath
 
-*.bat
-*.sh
 *.iml
 *.ipr
 *.iws
