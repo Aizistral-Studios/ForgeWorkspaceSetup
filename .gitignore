@@ -14,8 +14,6 @@ eclipse/*
 .project
 .classpath
 
-*.bat
-*.sh
 *.iml
 *.ipr
 *.iws
@@ -23,3 +21,4 @@ eclipse/*
 .factorypath
 
 forge*changelog.txt
+!build/libs
