@@ -66,7 +66,7 @@ public class ExampleMod {
     public static CreativeTabs tabExampleMod = new CreativeTabs("tabExampleMod") {
         @Override
         @SideOnly(Side.CLIENT)
-        public ItemStack getTabIconItem() {
+        public ItemStack createIcon() {
             return new ItemStack(Items.BAKED_POTATO);
         }
     };

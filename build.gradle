@@ -1,23 +1,19 @@
 buildscript {
     repositories {
-		gradlePluginPortal()
         mavenCentral()
+		mavenLocal()
         jcenter()
-		maven {
-			name = "Forge"
-			url = 'https://files.minecraftforge.net/maven'
-		}
-		maven {
-            name = 'spongepowered-repo'
-            url = 'https://repo.spongepowered.org/repository/maven-public/'
-        }
         maven {
+            name = "forge"
+            url = "https://maven.minecraftforge.net/"
+        }       
+		maven {
             name = "github"
             url = "https://github.com/juanmuscaria/maven/raw/master"
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle2:[2.3-1.0.0-SNAPSHOT,)'
     }
 }
 
@@ -40,7 +36,7 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 
 minecraft {
 	version = "1.12.2-14.23.5.2847"
-    mappings = "snapshot_20171003"
+    mappings = "stable_39"
 	runDir = "eclipse"
     
 	replace '@VERSION@', project.version
