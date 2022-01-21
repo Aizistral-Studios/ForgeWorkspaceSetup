@@ -29,7 +29,7 @@ import com.integral.examplemod.network.packets.ExamplePacket;
 import com.integral.examplemod.proxy.CommonProxy;
 import io.github.crucible.omniconfig.api.OmniconfigAPI;
 
-@Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION, name = ExampleMod.NAME)
+@Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION, name = ExampleMod.NAME, dependencies = "required-after:grimoire@[3.2.10,)")
 public class ExampleMod {
     public static final String MODID = "examplemod";
     public static final String NAME = "The Example Mod";
