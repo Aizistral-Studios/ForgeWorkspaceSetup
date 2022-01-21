@@ -1,11 +1,11 @@
 # Forge Workspace Setup: Grimmix 1.12.2
 
-Basic setup for Forge-based mod development workspace, but for mod that depends on Grimoire. Besides all advantages of standalone 1.12.2 setup, which you can familiarize yourself with [here](https://github.com/CrucibleMC/ForgeWorkspaceSetup#readme), this setup includes:
+Basic setup for Forge-based mod development workspace, but for mod that depends on Grimoire. Besides all advantages of standalone 1.12.2 setup, which you can familiarize yourself with [here](https://github.com/Aizistral-Studios/ForgeWorkspaceSetup#readme), this setup includes:
 
 ## Building Features:
 
 - **MixinGradle** plugin is added to buildscript. Mostly just takes care of handling refmap generation and embedding. Check out [its repository](https://github.com/SpongePowered/MixinGradle) to know more;
-- **Grimoire Shenanigans** plugin is added to buildscript. Does some amount of heavy lifting for ya, like specifying proper compile-time and runtime dependencies. For more details - [pay that plugin's reporitory a personal visit](https://github.com/CrucibleMC/Grimoire-Shenanigans#readme);
+- **Grimoire Shenanigans** plugin is added to buildscript. Does some amount of heavy lifting for ya, like specifying proper compile-time and runtime dependencies. For more details - [pay that plugin's reporitory a personal visit](https://github.com/Aizistral-Studios/Grimoire-Shenanigans#readme);
 - Custom refmap name specified in `gradle.properties`.
 
 ## Extended Example Mod:
@@ -17,4 +17,4 @@ Basic setup for Forge-based mod development workspace, but for mod that depends 
 
 ## Short Setup Guide:
 
-Same steps as for standalone version, which you can familirize yourself with [here](https://github.com/CrucibleMC/ForgeWorkspaceSetup/tree/1.12.2-standalone#short-setup-guide).
+Same steps as for standalone version, which you can familirize yourself with [here](https://github.com/Aizistral-Studios/ForgeWorkspaceSetup/tree/1.12.2-standalone#short-setup-guide).
